@@ -1,10 +1,12 @@
 import "./style.css";
+import Header from "../../components/Header/";
+
 
 function Home() {
   return (
     <div>
       <nav>
-        <h1>HomePage simulador</h1>
+        <Header />
       </nav>
     </div>
   );

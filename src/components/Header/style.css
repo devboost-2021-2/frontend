@@ -1,0 +1,41 @@
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8CD6EE;
+    padding: 1em;
+}
+
+.flexbox {
+    display: flex;
+}
+
+h1 {
+    color: #48A4E7;
+    font-size: 2em;
+    margin: auto 1em;
+}
+
+button {
+    background-color: #68B0E3;
+    border: none;
+    border-radius: 5px;
+    font-size: 2em;
+    padding: 7px;
+    margin: 0 10px;
+    color: white;
+    border-bottom: 5px solid #288BE7;
+}
+
+button:hover {
+    background-color: #499AE5;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #288BE7;
+    transition: 0.25s;
+    border: none;
+    margin-top: 5px;
+}
