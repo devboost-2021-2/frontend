@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <nav>
-        <h1>Nome da minha aplicação</h1>
+        <h1>HomePage simulador</h1>
       </nav>
     </div>
   );
