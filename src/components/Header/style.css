@@ -24,7 +24,6 @@ button {
     padding: 7px;
     margin: 0 10px;
     color: white;
-    border-bottom: 5px solid #288BE7;
 }
 
 button:hover {
@@ -37,5 +36,4 @@ button:active {
     background-color: #288BE7;
     transition: 0.25s;
     border: none;
-    margin-top: 5px;
 }
