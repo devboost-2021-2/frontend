@@ -1,5 +1,6 @@
 h1 {
   color: #cccccc;
+  font-family: sans-serif;
 }
 
 .circle {
@@ -15,12 +16,16 @@ h1 {
 }
 
 #containerEsquerda {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
+  flex-grow: 3;
+  width: auto;
 }
 
 #containerDireita {
-  display: flex;
-  justify-content: space-between;
+  flex-grow: 1;
+  width: auto;
+}
+
+#timer{
+  color: #888;
+  font-family: sans-serif;
 }
