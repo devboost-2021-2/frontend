@@ -24,7 +24,8 @@ function QuestionPage() {
   
 
   return (
-    <div>
+    <div id="containerPrincipal">
+      <div id="containerEsquerda">
         <h1>Questão X)</h1>
         <p>Vestibular</p>
         <p>Enunciado</p>
@@ -36,24 +37,19 @@ function QuestionPage() {
             </div>
           ))
         }
-
-      <div>
+      </div>
+      <div id="containerDireita">
         <h1>Questões</h1>
-        {
+          {
           questionLinks.map((questions) => (
-            <div>
-                {
-                  questions.map((question) => (
-                    <button class="circle" id={question}></button>
-                  ))
-
-    
-                }
-
+              {
+                questions.map((question) => (
+                  <button className="circle" id={question}></button>
+                ))
+              }
             </div>
           ))
-        }
-         
+          }
         <button>Finalizar</button>
       </div>
     </div>
