@@ -1,7 +1,28 @@
 import "./style.css";
 
+function Links() {
+
+    let rows = []
+    rows.push()
+    for (let i = 1; i <= 20; i++) {
+
+      rows.push(<a></a>)
+    }
+    rows.push()
+    return (
+      <div>
+        <h1>Loop 1:</h1>
+        <ul>{rows}</ul>
+      </div>
+    )
+
+}
+
 function QuestionPage() {
   const alternatives = [{id:"a",name: "alternativa A"},{id:"b",name: "alternativa B"},{id:"c",name: "alternativa C"}]
+  const questionLinks = Array.from({length: 4}, () => Array.from({length: 5}, () => 0));
+  
+
   return (
     <div>
         <h1>Questão X)</h1>
@@ -15,6 +36,26 @@ function QuestionPage() {
             </div>
           ))
         }
+
+      <div>
+        <h1>Questões</h1>
+        {
+          questionLinks.map((questions) => (
+            <div>
+                {
+                  questions.map((question) => (
+                    <button class="circle" id={question}></button>
+                  ))
+
+    
+                }
+
+            </div>
+          ))
+        }
+         
+        <button>Finalizar</button>
+      </div>
     </div>
   );
 }
