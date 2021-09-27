@@ -1,17 +1,18 @@
 import "./style.css";
 import {BsList} from "react-icons/bs";
 import {BiChevronsLeft} from "react-icons/bi";
+import {useState} from "react";
 
 
 function Header() {
-    let menu = true;
     const logged = false;
+    const [menu, setMenu] = useState(false);
     return (
-        <div class="body">
-            <div class="flexbox">
-                <button onclick={
+        <div className="body">
+            <div className="flexbox">
+                <button onClick={
                     () => {
-                        menu = !menu
+                        setMenu(!menu)
                         console.log(menu)
                     }
                 }>
