@@ -1,6 +1,6 @@
 import "./style.css";
 import Header from "../../components/Header/";
-
+import Menu from "../../components/Menu/";
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
       <nav>
         <Header />
       </nav>
+      <Menu />
     </div>
   );
 }
