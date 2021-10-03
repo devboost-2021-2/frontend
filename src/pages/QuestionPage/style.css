@@ -10,6 +10,10 @@ h1 {
   margin: 2px;
 }
 
+.inline {
+  display: inline;
+}
+
 #containerPrincipal {
   display: flex;
   justify-content: space-between;
@@ -25,7 +29,7 @@ h1 {
   width: auto;
 }
 
-#timer{
+#timer {
   color: #888;
   font-family: sans-serif;
 }
