@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+li {
+    list-style-type: none;
+    background-color: #68B0E3;
+    border: 1px solid;
+    margin: 0.01em;
+    border-radius: 5px;
+    padding: 0.8em;
+    width: 25%;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
