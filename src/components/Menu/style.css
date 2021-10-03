@@ -4,10 +4,11 @@ li {
     list-style-type: none;
     background-color: #68B0E3;
     border: 1px solid;
-    margin: 0.01em;
+    margin: 1px;
     border-radius: 5px;
     padding: 0.8em;
     width: 25%;
+    max-width: 25em;
     color: white;
     font-weight: bold;
     font-family: 'Roboto';
