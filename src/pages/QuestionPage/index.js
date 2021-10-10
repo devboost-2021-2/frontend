@@ -24,21 +24,21 @@ function Selector(props) {
       {props.allQuestions.map((question, index) => (
         <div class="inline" key={question.number}>
 	  {index % props.numberPerLine === 0 && <br />}
-	  <button className={ `circle ${props.currentQuestion == index ? "selectedCircle" : ""}` } onClick={() => props.callBack(index)} id={question.number}>{question.number+1}</button>
+	  <button className={ `circle ${props.currentQuestion == index ? "selectedCircle" : ""}` } onClick={() => props.callBack(index)} id={question.number}>{question.number}</button>
         </div>
       ))}
     </>
   );
 }
-function Question({ question }) {
+function Question({ question, callBack, selectedAnswer }) {
   return (
     <div id="containerEsquerda">
-      <h1>Questão {question.number+1})</h1>
+      <h1>Questão {question.number})</h1>
       <p>{question.exam}</p>
       <p>{question.statement}</p>
       {question.alternatives.map((alternative) => (
         <div>
-          <input type="radio" id={alternative.id} name="Question" />
+          <input type="radio" id={alternative.id} name="Question" onClick={() => {callBack(alternative.id)}} checked={ alternative.id == selectedAnswer }/>
           <label htmlFor={alternative.id}>{alternative.option}</label>
         </div>
       ))}
@@ -64,14 +64,17 @@ function QuestionPage() {
   const allQuestions = [];
 
   for (let i = 0; i < 90; i++) {
-    allQuestions.push({ ...question, number: i });
+    allQuestions.push({ ...question, number: i+1 });
   }
 
   const [currentQuestion, setQuestion] = useState(0);
-
+  const [answersDict, setAnswers] = useState({});
+  console.log(answersDict);
+  const questionObj = allQuestions[currentQuestion];
+  const questionNumber = questionObj.number;
   return (
     <div id="containerPrincipal">
-      <Question question={allQuestions[currentQuestion]} />
+      <Question question={questionObj} selectedAnswer={ answersDict[questionNumber] } callBack={ (answer) => {setAnswers({ ...answersDict, [questionNumber]: answer})} } />
       <div id="containerDireita">
         <Timer />
         <Selector allQuestions={allQuestions} callBack={setQuestion} currentQuestion={currentQuestion} numberPerLine={10} />
