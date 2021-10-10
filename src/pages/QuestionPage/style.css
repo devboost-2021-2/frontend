@@ -10,6 +10,9 @@ h1 {
   margin: 2px;
 }
 
+.selectedCircle {
+  background-color: red;
+}
 .inline {
   display: inline;
 }

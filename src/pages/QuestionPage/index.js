@@ -23,8 +23,8 @@ function Selector(props) {
       <h1>Questões</h1>
       {props.allQuestions.map((question, index) => (
         <div class="inline" key={question.number}>
-          {index % props.numberPerLine === 0 && <br />}
-          <button className="circle" id={question.number}></button>
+	  {index % props.numberPerLine === 0 && <br />}
+	  <button className={ `circle ${props.currentQuestion == index ? "selectedCircle" : ""}` } onClick={() => props.callBack(index)} id={question.number}>{question.number+1}</button>
         </div>
       ))}
     </>
@@ -33,7 +33,7 @@ function Selector(props) {
 function Question({ question }) {
   return (
     <div id="containerEsquerda">
-      <h1>Questão {question.number})</h1>
+      <h1>Questão {question.number+1})</h1>
       <p>{question.exam}</p>
       <p>{question.statement}</p>
       {question.alternatives.map((alternative) => (
@@ -46,6 +46,7 @@ function Question({ question }) {
   );
 }
 function QuestionPage() {
+
   const alternatives = [
     { id: "a", option: "Texto da alternativa A" },
     { id: "b", option: "Texto da alternativa B" },
@@ -55,8 +56,7 @@ function QuestionPage() {
 
   const question = {
     alternatives: alternatives,
-    number: 1,
-    correctAnswer: "d",
+    number: -1,
     statement: "Qual alternativa está certa?? Me diz:",
     exam: "FUVEST 2030",
   };
@@ -64,14 +64,17 @@ function QuestionPage() {
   const allQuestions = [];
 
   for (let i = 0; i < 90; i++) {
-    allQuestions.push(question);
+    allQuestions.push({ ...question, number: i });
   }
+
+  const [currentQuestion, setQuestion] = useState(0);
+
   return (
     <div id="containerPrincipal">
-      <Question question={question} />
+      <Question question={allQuestions[currentQuestion]} />
       <div id="containerDireita">
         <Timer />
-        <Selector allQuestions={allQuestions} numberPerLine={10} />
+        <Selector allQuestions={allQuestions} callBack={setQuestion} currentQuestion={currentQuestion} numberPerLine={10} />
         <br />
         <button>Finalizar</button>
       </div>
