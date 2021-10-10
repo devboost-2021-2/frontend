@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-li {
+.menu li {
     list-style-type: none;
     background-color: #68B0E3;
     border: 1px solid;
