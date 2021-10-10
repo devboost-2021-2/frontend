@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .footer {
     display: flex;
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-size: 0.9em;
+    font-family: 'Roboto';
+    background-color: #8CD6EE;
+    height: 5em;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin: 0;
+    color: black;
+    /* font-weight: bold; */
+}
+
+.footer li {
+    margin: auto;
 }

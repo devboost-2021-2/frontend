@@ -23,7 +23,7 @@ function Header() {
           <h1>Nome do site</h1>
         </div>
         <div>
-          {logged && <img src="favicon.ico" />}
+          {logged && <img src="favicon.ico" alt="foto de perfil" />}
           {!logged && (
             <>
               <button>Cadastrar</button>
