@@ -6,16 +6,16 @@ import Question from "../../components/Question";
 
 function QuestionPage() {
   const alternatives = [
-    { id: "a", option: "Texto da alternativa A" },
-    { id: "b", option: "Texto da alternativa B" },
-    { id: "c", option: "Texto da alternativa C" },
-    { id: "d", option: "Texto da alternativa D" },
+    { id: "a", option: "Texto da alternativa ATexto da alternativa ATexto da alternativa A" },
+    { id: "b", option: "Texto da alternativa BTexto da alternativa ATexto da alternativa A" },
+    { id: "c", option: "Texto da alternativa CTexto da alternativa ATexto da alternativa A" },
+    { id: "d", option: "Texto da alternativa DTexto da alternativa ATexto da alternativa A" },
   ];
 
   const question = {
     alternatives: alternatives,
     number: -1,
-    statement: "Qual alternativa está certa?? Me diz:",
+    statement: "Lorem ipsum \n dolor sit amet, consectetur adipiscing elit. Proin sit amet sem ut lacus auctor iaculis ut eget sapien. Praesent fermentum efficitur mauris. Morbi ultrices eros id neque consequat maximus. Donec vulputate magna quis lacus lobortis, at porttitor justo elementum. Aliquam erat volutpat. Vestibulum neque lorem, condimentum eget viverra in, iaculis vel justo. Proin id rutrum quam. Suspendisse enim purus, pellentesque et nibh ullamcorper, lacinia lacinia sapien. Vestibulum rhoncus, purus nec consequat blandit, ante nisi consequat nisl, quis iaculis nunc est eu dui. Integer pretium diam sit amet pellentesque ultrices. Nullam eget malesuada sem, venenatis auctor tellus. Vivamus luctus lorem ut dolor pellentesque, eget lobortis magna pharetra. Donec euismod nec est non ultricies. Proin odio ligula, efficitur sed commodo et, porta mattis eros. Fusce velit massa, finibus sit amet nisl nec, vestibulum fringilla libero.",
     exam: "FUVEST 2030",
   };
 
