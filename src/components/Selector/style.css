@@ -1,0 +1,35 @@
+#selectorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  border-radius: 100%;
+  height: 24px;
+  width: 24px;
+  margin: 2px;
+  border: 0;
+  background-color: #7bd1d4;
+  text-align: center;
+  padding: 0;
+}
+
+.answered {
+  background-color: #03fcb1;
+}
+
+.selectedCircle {
+  background-color: #1772bd;
+  color: white;
+}
+
+.inline {
+  display: inline;
+}
+
+#titleSelector {
+  color: #1772bd;
+  margin-bottom: 0;
+  text-align: center;
+}
