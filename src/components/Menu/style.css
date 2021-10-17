@@ -12,6 +12,11 @@
     font-family: 'Roboto';
 }
 
+li:hover {
+    background-color: #499AE5;
+    transition: 0.5s;
+}
+
 .menu {
     width: 25%;
     max-width: 25em;
