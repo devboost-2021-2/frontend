@@ -1,6 +1,8 @@
 import "./style.css";
-import { Link } from "react-router-dom";
+
 import * as Icones from "react-icons/bi";
+
+import { Link } from "react-router-dom";
 import React from "react";
 
 function Item({ icone, titulo, link }) {
@@ -14,24 +16,6 @@ function Item({ icone, titulo, link }) {
 }
 
 function Menu({ itens }) {
-  itens = [
-    {
-      icone: "BiChevronsLeft",
-      titulo: "Home",
-      link: "",
-    },
-    {
-      icone: "BiChevronsLeft",
-      titulo: "Iniciar simulado",
-      link: "",
-    },
-    {
-      icone: "BiChevronsLeft",
-      titulo: "Iniciar simulado",
-      link: "",
-    },
-  ];
-
   return (
     <div>
       <ul class="menu">

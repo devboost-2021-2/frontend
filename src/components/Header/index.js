@@ -1,10 +1,11 @@
 import "./style.css";
-import { BsList } from "react-icons/bs";
-import { BiChevronsLeft } from "react-icons/bi";
-import { useState } from "react";
-import Menu from "../Menu/";
 
-function Header() {
+import { BiChevronsLeft } from "react-icons/bi";
+import { BsList } from "react-icons/bs";
+import Menu from "../Menu/";
+import { useState } from "react";
+
+function Header({ sideBarItens }) {
   const logged = false;
   const [menu, setMenu] = useState(false);
   return (
@@ -32,7 +33,7 @@ function Header() {
           )}
         </div>
       </div>
-      {menu && <Menu />}
+      {menu && <Menu itens={sideBarItens} />}
     </>
   );
 }

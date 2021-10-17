@@ -7,9 +7,12 @@
     margin: 1px;
     border-radius: 5px;
     padding: 0.8em;
-    width: 25%;
-    max-width: 25em;
     color: white;
     font-weight: bold;
     font-family: 'Roboto';
+}
+
+.menu {
+    width: 25%;
+    max-width: 25em;
 }
