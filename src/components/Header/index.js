@@ -6,15 +6,21 @@ import Menu from "../Menu/";
 import { useState, useEffect, useRef } from "react";
 
 function Header({ sideBarItens }) {
-  const logged = false;
+  const logged = true;
   const [menu, setMenu] = useState(false);
+  const [profile, setProfile] = useState(false);
   let menuRef = useRef();
+  let profileRef = useRef();
   useEffect(() => {
-      document.addEventListener("mouseup", (event)=>{
+    document.addEventListener(
+      "mouseup",
+      (event) => {
         if (!menuRef?.current?.contains(event.target)) setMenu(false);
-      }, [])
-    }
-  )
+        if (!profileRef?.current?.contains(event.target)) setProfile(false);
+      },
+      []
+    );
+  });
   return (
     <>
       <div className="body">
@@ -22,7 +28,6 @@ function Header({ sideBarItens }) {
           <button
             onClick={() => {
               setMenu(!menu);
-              console.log(menu);
             }}
           >
             {menu && <BiChevronsLeft size={30} viewBox="4 2.5 16 16" />}
@@ -31,7 +36,16 @@ function Header({ sideBarItens }) {
           <h1>Nome do site</h1>
         </div>
         <div>
-          {logged && <img src="favicon.ico" alt="foto de perfil" />}
+          {logged && (
+            <img
+              id="profile"
+              onClick={() => {
+                setProfile(!profile);
+              }}
+              src="favicon.ico"
+              alt="foto de perfil"
+            />
+          )}
           {!logged && (
             <>
               <button>Cadastrar</button>
@@ -41,6 +55,28 @@ function Header({ sideBarItens }) {
         </div>
       </div>
       {menu && <Menu ref={menuRef} itens={sideBarItens} />}
+      {profile && (
+        <Menu
+          ref={profileRef}
+          itens={[
+            {
+              icone: "BiUser",
+              titulo: "Perfil",
+              link: "",
+            },
+            {
+              icone: "BiCog",
+              titulo: "Configurações",
+              link: "",
+            },
+            {
+              icone: "BiLogOut",
+              titulo: "Sair",
+              link: "",
+            },
+          ]}
+        />
+      )}
     </>
   );
 }

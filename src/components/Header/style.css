@@ -36,3 +36,7 @@ button:active {
     transition: 0.25s;
     border: none;
 }
+
+#profile:hover {
+    cursor: pointer;
+}
