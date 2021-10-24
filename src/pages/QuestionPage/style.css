@@ -6,6 +6,7 @@
 #containerEsquerda {
   flex-grow: 3;
   width: 75%;
+  margin-left: 5px;
 }
 
 #containerDireita {
@@ -14,6 +15,8 @@
   flex-grow: 1;
   width: auto;
   align-items: center;
+  border: 1px solid blue;
+  border-radius: 8px;
 }
 
 #btnFinish {
