@@ -20,4 +20,5 @@ li:hover {
 .menu {
     width: 25%;
     max-width: 25em;
+    position: fixed;
 }

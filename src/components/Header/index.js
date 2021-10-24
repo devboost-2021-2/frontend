@@ -11,19 +11,24 @@ function Header({ sideBarItens }) {
   const [profile, setProfile] = useState(false);
   let menuRef = useRef();
   let profileRef = useRef();
+  let buttonRef = useRef();
   useEffect(() => {
     document.addEventListener(
       "mouseup",
       (event) => {
         if (!menuRef?.current?.contains(event.target)) setMenu(false);
-        if (!profileRef?.current?.contains(event.target)) setProfile(false);
+        if (
+          !profileRef?.current?.contains(event.target) &&
+          !buttonRef?.current?.contains(event.target)
+        )
+          setProfile(false);
       },
-      []
+      [menu, profile]
     );
   });
   return (
-    <>
-      <div className="body">
+    <div className="body">
+      <nav>
         <div className="flexbox">
           <button
             onClick={() => {
@@ -39,6 +44,7 @@ function Header({ sideBarItens }) {
           {logged && (
             <img
               id="profile"
+              ref={buttonRef}
               onClick={() => {
                 setProfile(!profile);
               }}
@@ -53,7 +59,7 @@ function Header({ sideBarItens }) {
             </>
           )}
         </div>
-      </div>
+      </nav>
       {menu && <Menu ref={menuRef} itens={sideBarItens} />}
       {profile && (
         <Menu
@@ -77,7 +83,7 @@ function Header({ sideBarItens }) {
           ]}
         />
       )}
-    </>
+    </div>
   );
 }
 

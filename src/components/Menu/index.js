@@ -18,9 +18,14 @@ function Item({ icone, titulo, link }) {
 function Menu({ itens }) {
   return (
     <div>
-      <ul class="menu">
+      <ul className="menu">
         {itens.map((item) => (
-          <Item icone={item.icone} titulo={item.titulo} link={item.link} />
+          <Item
+            key={item.titulo}
+            icone={item.icone}
+            titulo={item.titulo}
+            link={item.link}
+          />
         ))}
       </ul>
     </div>
