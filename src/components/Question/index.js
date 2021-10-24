@@ -16,7 +16,7 @@ function Question({ question, callBack, selectedAnswer }) {
 	    onClick={() => {
 	      callBack(alternative.id);
 	    }}
-	    checked={alternative.id == selectedAnswer}
+	    checked={alternative.id === selectedAnswer}
 	  />
 	  <label htmlFor={alternative.id}>{alternative.option}</label>
         </div>

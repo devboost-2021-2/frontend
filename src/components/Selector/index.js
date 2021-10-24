@@ -13,7 +13,7 @@ function Selector(props) {
               {index % props.numberPerLine === 0 && <br />}
               <button
                 className={`circle ${
-                  props.currentQuestion == index ? "selectedCircle" : ""
+                  props.currentQuestion === index ? "selectedCircle" : ""
                 } ${
                   props.answers.includes(`${question.number}`) ? "answered" : ""
                 }`}
