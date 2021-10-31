@@ -1,0 +1,31 @@
+#containerPrincipal {
+  display: flex;
+  justify-content: space-between;
+}
+
+#containerEsquerda {
+  flex-grow: 3;
+  width: 75%;
+  margin-left: 5px;
+}
+
+#containerDireita {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: auto;
+  align-items: center;
+  border: 1px solid blue;
+  border-radius: 8px;
+}
+
+#btnFinish {
+  border: 0;
+  padding: 0.5em;
+  background-color: #10b5c7;
+  width: 40%;
+  border-radius: 15px;
+  color: white;
+  font-weight: 800;
+  margin: 1.5em auto;
+}
