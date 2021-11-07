@@ -15,10 +15,10 @@ function Item({ icone, titulo, link }) {
   );
 }
 
-function Menu({ itens }) {
+function Menu({ itens, direita }) {
   return (
     <div>
-      <ul className="menu">
+      <ul className="menu" style={direita ? { right: 0 } : {}}>
         {itens.map((item) => (
           <Item
             key={item.titulo}

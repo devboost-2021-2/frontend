@@ -81,6 +81,7 @@ function Header({ sideBarItens }) {
               link: "",
             },
           ]}
+          direita={true}
         />
       )}
     </div>

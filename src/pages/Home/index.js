@@ -130,9 +130,7 @@ function Home() {
         recusandae quia? Ex similique velit rem ipsa! Eaque.{" "}
       </p>
 
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
