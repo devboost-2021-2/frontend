@@ -1,35 +1,32 @@
 import "./style.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Timer from "../../components/Timer";
 import Selector from "../../components/Selector";
 import Question from "../../components/Question";
 
 function QuestionPage() {
-  const alternatives = [
-    { id: "a", option: "Texto da alternativa ATexto da alternativa ATexto da alternativa A" },
-    { id: "b", option: "Texto da alternativa BTexto da alternativa ATexto da alternativa A" },
-    { id: "c", option: "Texto da alternativa CTexto da alternativa ATexto da alternativa A" },
-    { id: "d", option: "Texto da alternativa DTexto da alternativa ATexto da alternativa A" },
-  ];
-
-  const question = {
-    alternatives: alternatives,
-    number: -1,
-    statement: "Lorem ipsum \n dolor sit amet, consectetur adipiscing elit. Proin sit amet sem ut lacus auctor iaculis ut eget sapien. Praesent fermentum efficitur mauris. Morbi ultrices eros id neque consequat maximus. Donec vulputate magna quis lacus lobortis, at porttitor justo elementum. Aliquam erat volutpat. Vestibulum neque lorem, condimentum eget viverra in, iaculis vel justo. Proin id rutrum quam. Suspendisse enim purus, pellentesque et nibh ullamcorper, lacinia lacinia sapien. Vestibulum rhoncus, purus nec consequat blandit, ante nisi consequat nisl, quis iaculis nunc est eu dui. Integer pretium diam sit amet pellentesque ultrices. Nullam eget malesuada sem, venenatis auctor tellus. Vivamus luctus lorem ut dolor pellentesque, eget lobortis magna pharetra. Donec euismod nec est non ultricies. Proin odio ligula, efficitur sed commodo et, porta mattis eros. Fusce velit massa, finibus sit amet nisl nec, vestibulum fringilla libero.",
-    exam: "FUVEST 2030",
-  };
-
-  const allQuestions = [];
-
-  for (let i = 0; i < 90; i++) {
-    allQuestions.push({ ...question, number: i + 1 });
-  }
-
+  const [allQuestions, setAllQuestions] = useState([]);
   const [currentQuestion, setQuestion] = useState(0);
   const [answersDict, setAnswers] = useState({});
-  console.log(answersDict);
+  const [status, setStatus] = useState("CARREGANDO...");
+
+  useEffect(() => {
+    const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:3333";
+    fetch(url + "/questions")
+      .then(async (resp) => {
+        setAllQuestions((await resp.json()).allQuestions);
+      })
+      .catch((message) => {
+        setStatus("Não foi possível obter as questões.");
+        console.log(message);
+      });
+  }, []);
+
+  if (allQuestions.length === 0) return <p>{status}</p>;
+
   const questionObj = allQuestions[currentQuestion];
   const questionNumber = questionObj.number;
+
   return (
     <div id="containerPrincipal">
       <Question

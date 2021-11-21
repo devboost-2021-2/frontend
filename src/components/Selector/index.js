@@ -2,14 +2,13 @@ import React from "react";
 import "./style.css";
 
 function Selector(props) {
-  console.log(props.answers);
   return (
     <>
       <div id="selectorContainer">
         <h1 id="titleSelector">Questões</h1>
         <div>
           {props.allQuestions.map((question, index) => (
-            <div class="inline" key={question.number}>
+            <div className="inline" key={question.number}>
               {index % props.numberPerLine === 0 && <br />}
               <button
                 className={`circle ${
