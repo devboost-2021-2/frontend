@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.menu li {
+    list-style-type: none;
+    background-color: #68B0E3;
+    border: 1px solid;
+    margin: 1px;
+    border-radius: 5px;
+    padding: 0.8em;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+
+li:hover {
+    background-color: #499AE5;
+    transition: 0.5s;
+}
+
+.menu {
+    width: 25%;
+    max-width: 25em;
+    position: fixed;
+    margin-right: 1%;
+}
