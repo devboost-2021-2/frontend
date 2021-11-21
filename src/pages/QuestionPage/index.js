@@ -5,13 +5,24 @@ import Selector from "../../components/Selector";
 import Question from "../../components/Question";
 
 function QuestionPage() {
+  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:3333";
   const [allQuestions, setAllQuestions] = useState([]);
   const [currentQuestion, setQuestion] = useState(0);
   const [answersDict, setAnswers] = useState({});
   const [status, setStatus] = useState("CARREGANDO...");
 
+  function sendAnswers() {
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
+    fetch(url + "/questions/answers", {
+      method: "POST",
+      body: JSON.stringify(answersDict),
+      headers,
+    });
+  }
+
   useEffect(() => {
-    const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:3333";
     fetch(url + "/questions")
       .then(async (resp) => {
         setAllQuestions((await resp.json()).allQuestions);
@@ -25,15 +36,14 @@ function QuestionPage() {
   if (allQuestions.length === 0) return <p>{status}</p>;
 
   const questionObj = allQuestions[currentQuestion];
-  const questionNumber = questionObj.number;
 
   return (
     <div id="containerPrincipal">
       <Question
         question={questionObj}
-        selectedAnswer={answersDict[questionNumber]}
+        selectedAnswer={answersDict[questionObj.id]}
         callBack={(answer) => {
-          setAnswers({ ...answersDict, [questionNumber]: answer });
+          setAnswers({ ...answersDict, [questionObj.id]: answer });
         }}
       />
       <div id="containerDireita">
@@ -46,7 +56,9 @@ function QuestionPage() {
           numberPerLine={10}
         />
         <br />
-        <button id="btnFinish">Finalizar</button>
+        <button id="btnFinish" onClick={sendAnswers}>
+          Finalizar
+        </button>
       </div>
     </div>
   );
