@@ -1,9 +1,9 @@
-.body {
+.header {
     position: sticky;
     top: 0;
 }
 
-nav {
+.header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,17 +11,17 @@ nav {
     padding: 0.5em;
 }
 
-.flexbox {
+.header .flexbox {
     display: flex;
 }
 
-h1 {
+.header h1 {
     color: #48A4E7;
     font-size: 2em;
     margin: auto 1em;
 }
 
-button {
+.header button {
     background-color: #68B0E3;
     border: none;
     border-radius: 5px;
@@ -30,18 +30,18 @@ button {
     color: white;
 }
 
-button:hover {
+.header button:hover {
     background-color: #499AE5;
     transition: 0.5s;
     cursor: pointer;
 }
 
-button:active {
+.header button:active {
     background-color: #288BE7;
     transition: 0.25s;
     border: none;
 }
 
-#profile:hover {
+.header #profile:hover {
     cursor: pointer;
 }

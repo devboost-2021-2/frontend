@@ -27,7 +27,7 @@ function Header({ sideBarItens }) {
     );
   });
   return (
-    <div className="body">
+    <div className="header">
       <nav>
         <div className="flexbox">
           <button
@@ -38,7 +38,7 @@ function Header({ sideBarItens }) {
             {menu && <BiChevronsLeft size={30} viewBox="4 2.5 16 16" />}
             {!menu && <BsList size={30} viewBox="0 -2 16 16" />}
           </button>
-          <h1>Nome do site</h1>
+          <h1 className="header-h1">Nome do site</h1>
         </div>
         <div>
           {logged && (
